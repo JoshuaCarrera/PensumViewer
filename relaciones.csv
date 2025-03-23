@@ -1,79 +1,79 @@
-Código,Prelación
-LEN-113,---
-ING-113,---
-INF-102,---
-CAL-114,---
-CIE-102,---
-LOG-103,---
-TID-102,---
-DPT-102,---
-LEN-223,LEN-113
-ING-223,ING-113
-ALG-203,CAL-114
-CAL-224,CAL-114
-FIS-214,CAL-114
-OAE-202,INF-102
-EDD-203,INF-102&LOG-103
-ING-333,ING-223
-LAF-312,FIS-214
-CAL-334,CAL-224
-FIS-324,FIS-214
-MAT-302,ALG-203
-BDD-304,EDD-203
-TEC-303,30 UC APROB
-ING-443,ING-333
-LAF-422,LAF-312&FIS-324
-CAL-444,CAL-334
-FDR-403,BDD-304
-TDG-414,LOG-103&P-LAF-422
-PRO-413,EDD-203
-ADC-403,EDD-203
-ING-553,ING-443
-LAD-502,BDD-304
-SSC-502,SEM I-IV|50% UC APROBADAS
-EYP-503,CAL-334
-TDG-524,TDG-414
-PRO-523,PRO-413
-SOP-513,ADC-403
-SSI-502,BDD-304&80UC
-OYP-502,70 UC APROBADAS
-GRH-502,
-TYD-502,
-ING-663,ING-553
-SOP-623,SOP-513
-ISF-614,PRO-523&SOP-513
-CAL-604,CAL-444
-PRO-633,PRO-523
-MEI-612,TID-102&90UC APROBADAS
-ARD-603,SSI-502
-ING-773,ING-663
-IOP-703,ALG-203&EYP-503&100 UC APROBADAS
-ISF-724,ISF-614
-SDS-703,LAF-422&CAL-444
-PRW-703,PRO-633
-MEI-722,MEI-612
-SIN-703,ARD-603
-ARH-702,OYP-502|GRH-502&100 UC APROB
-TGR-702,OYP-502|TYD-502
-SAU-702,ISF-614
-IEN-803,TEC-303&120UC
-FDD-802,120UC
-TRD-814,SDS-703
-CTB-803,100 UC
-PRE-803,PRW-703
-FEP-803,ISF-724-MEI-722
-CRP-803,SIN-703
-SAM-802,ARH-702
-PRD-802,EYP-503&IOP-703&130 UC APROB
-MAD-802,OYP-502&ARH-702
-AUS-904,ISF-724
-ETP-902,153 UC APROB
-TEL-903,TRD-814&FDD-802
-TRD-924,TRD-814
-PRO-903,PRE-803
-STG-903,FEP-803
-AFO-903,CRP-803
-RPV-902,RIB-813|ABD-813|CRP-803
-DCM-902,EYP-503&IOP-703
-CEP-902,EYP-503&IOP-703
-TLP-902,158 UC APROB
+Unidad Curricular,Código,Prelación
+Lenguaje y Comunicación I,LEN-113,---
+Inglés I,ING-113,---
+Informática Básica,INF-102,---
+Cálculo I,CAL-114,---
+Ciencia e Ingeniería,CIE-102,---
+Lógica,LOG-103,---
+Técnicas de Investigación Documental,TID-102,---
+Deporte,DPT-102,---
+Lenguaje y Comunicación II,LEN-223,LEN-113
+Inglés II,ING-223,ING-113
+Algebra Lineal,ALG-203,CAL-114
+Cálculo II,CAL-224,CAL-114
+Física I,FIS-214,CAL-114
+Organización y Administración de Empresas,OAE-202,INF-102
+Estructura de Datos,EDD-203,INF-102&LOG-103
+Inglés III,ING-333,ING-223
+Laboratorio de Física I,LAF-312,FIS-214
+Cálculo III,CAL-334,CAL-224
+Física II,FIS-324,FIS-214
+Matemática Discreta,MAT-302,ALG-203
+Base de Datos,BDD-304,EDD-203
+Teoría Económica,TEC-303,30 UC APROB
+Inglés IV,ING-443,ING-333
+Laboratorio de Física II,LAF-422,LAF-312&FIS-324
+Cálculo IV,CAL-444,CAL-334
+Fundamentos de Redes,FDR-403,BDD-304
+Tecnología Digital I,TDG-414,LOG-103&P-LAF-422
+Programación I,PRO-413,EDD-203
+Arquitectura del Computador,ADC-403,EDD-203
+Inglés V,ING-553,ING-443
+Laboratorio de Datos,LAD-502,BDD-304
+Servicio Social Comunitario,SSC-502,SEM I-IV|50% UC APROBADAS
+Estadística y Probabilidad,EYP-503,CAL-334
+Tecnología Digital II,TDG-524,TDG-414
+Programación II,PRO-523,PRO-413
+Sistemas Operativos I,SOP-513,ADC-403
+Seminario de Seguridad Informática,SSI-502,BDD-304&80UC
+Organización y Programación del Trabajo,OYP-502,70 UC APROBADAS
+Gestión de Relaciones Humanas,GRH-502,
+Teorías y Técnicas de Decisión,TYD-502,
+Inglés VI,ING-663,ING-553
+Sistemas Operativos II,SOP-623,SOP-513
+Ingeniería del Software I,ISF-614,PRO-523&SOP-513
+Cálculo Numérico,CAL-604,CAL-444
+Programación III,PRO-633,PRO-523
+Metodología de la Investigación I,MEI-612,TID-102&90UC APROBADAS
+Análisis y Reconocimiento de Delitos Informáticos,ARD-603,SSI-502
+Inglés VII,ING-773,ING-663
+Investigación de Operaciones,IOP-703,ALG-203&EYP-503&100 UC APROBADAS
+Ingeniería de Software II,ISF-724,ISF-614
+Sistemas de Señales,SDS-703,LAF-422&CAL-444
+Programación Web,PRW-703,PRO-633
+Metodología de la Investigación II,MEI-722,MEI-612
+Seguridad Informática,SIN-703,ARD-603
+Administración de Recursos Humanos,ARH-702,OYP-502|GRH-502&100 UC APROB
+Técnicas Gerenciales,TGR-702,OYP-502|TYD-502
+Sistemas Automatizados,SAU-702,ISF-614
+Ingeniería Económica,IEN-803,TEC-303&120UC
+Fundamentos del derecho,FDD-802,120UC
+Transmisión de Datos I,TRD-814,SDS-703
+Contabilidad General,CTB-803,100 UC
+Programación Emergente,PRE-803,PRW-703
+Formulación y Evaluación de Proyectos de Ingeniería,FEP-803,ISF-724-MEI-722
+Criptografía,CRP-803,SIN-703
+Seguridad Ambiental y Medio Ambiente,SAM-802,ARH-702
+Producción,PRD-802,EYP-503&IOP-703&130 UC APROB
+Modelos Administrativos,MAD-802,OYP-502&ARH-702
+Auditoria de Sistemas,AUS-904,ISF-724
+Ética Profesional,ETP-902,153 UC APROB
+Transacciones Electrónicas,TEL-903,TRD-814&FDD-802
+Transmisión de Datos II,TRD-924,TRD-814
+Programación Multimedia,PRO-903,PRE-803
+Seminario de Trabajo de Grado,STG-903,FEP-803
+Análisis Forense,AFO-903,CRP-803
+VPN Redes Privadas Virtuales,RPV-902,RIB-813|ABD-813|CRP-803
+Diseño y Control de Modelos,DCM-902,EYP-503&IOP-703
+Control Estadístico de Procesos,CEP-902,EYP-503&IOP-703
+Teoría de Lenguajes de Programación,TLP-902,158 UC APROB

@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #FFFFFF;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "font": {"color": "black"}, "id": "LEN-113", "label": "Lenguaje y Comunicaci\u00f3n I", "shape": "dot", "title": "LEN-113"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ING-113", "label": "Ingl\u00e9s I", "shape": "dot", "title": "ING-113"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "INF-102", "label": "Inform\u00e1tica B\u00e1sica", "shape": "dot", "title": "INF-102"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CAL-114", "label": "C\u00e1lculo I", "shape": "dot", "title": "CAL-114"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CIE-102", "label": "Ciencia e Ingenier\u00eda", "shape": "dot", "title": "CIE-102"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "LOG-103", "label": "L\u00f3gica", "shape": "dot", "title": "LOG-103"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TID-102", "label": "T\u00e9cnicas de Investigaci\u00f3n Documental", "shape": "dot", "title": "TID-102"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "DPT-102", "label": "Deporte", "shape": "dot", "title": "DPT-102"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "LEN-223", "label": "Lenguaje y Comunicaci\u00f3n II", "shape": "dot", "title": "LEN-223"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ING-223", "label": "Ingl\u00e9s II", "shape": "dot", "title": "ING-223"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ALG-203", "label": "Algebra Lineal", "shape": "dot", "title": "ALG-203"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CAL-224", "label": "C\u00e1lculo II", "shape": "dot", "title": "CAL-224"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "FIS-214", "label": "F\u00edsica I", "shape": "dot", "title": "FIS-214"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "OAE-202", "label": "Organizaci\u00f3n y Administraci\u00f3n de Empresas", "shape": "dot", "title": "OAE-202"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "EDD-203", "label": "Estructura de Datos", "shape": "dot", "title": "EDD-203"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ING-333", "label": "Ingl\u00e9s III", "shape": "dot", "title": "ING-333"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "LAF-312", "label": "Laboratorio de F\u00edsica I", "shape": "dot", "title": "LAF-312"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CAL-334", "label": "C\u00e1lculo III", "shape": "dot", "title": "CAL-334"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "FIS-324", "label": "F\u00edsica II", "shape": "dot", "title": "FIS-324"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "MAT-302", "label": "Matem\u00e1tica Discreta", "shape": "dot", "title": "MAT-302"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "BDD-304", "label": "Base de Datos", "shape": "dot", "title": "BDD-304"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TEC-303", "label": "Teor\u00eda Econ\u00f3mica", "shape": "dot", "title": "TEC-303"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ING-443", "label": "Ingl\u00e9s IV", "shape": "dot", "title": "ING-443"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "LAF-422", "label": "Laboratorio de F\u00edsica II", "shape": "dot", "title": "LAF-422"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CAL-444", "label": "C\u00e1lculo IV", "shape": "dot", "title": "CAL-444"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "FDR-403", "label": "Fundamentos de Redes", "shape": "dot", "title": "FDR-403"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TDG-414", "label": "Tecnolog\u00eda Digital I", "shape": "dot", "title": "TDG-414"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "PRO-413", "label": "Programaci\u00f3n I", "shape": "dot", "title": "PRO-413"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ADC-403", "label": "Arquitectura del Computador", "shape": "dot", "title": "ADC-403"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ING-553", "label": "Ingl\u00e9s V", "shape": "dot", "title": "ING-553"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "LAD-502", "label": "Laboratorio de Datos", "shape": "dot", "title": "LAD-502"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SSC-502", "label": "Servicio Social Comunitario", "shape": "dot", "title": "SSC-502"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "EYP-503", "label": "Estad\u00edstica y Probabilidad", "shape": "dot", "title": "EYP-503"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TDG-524", "label": "Tecnolog\u00eda Digital II", "shape": "dot", "title": "TDG-524"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "PRO-523", "label": "Programaci\u00f3n II", "shape": "dot", "title": "PRO-523"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SOP-513", "label": "Sistemas Operativos I", "shape": "dot", "title": "SOP-513"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SSI-502", "label": "Seminario de Seguridad Inform\u00e1tica", "shape": "dot", "title": "SSI-502"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "OYP-502", "label": "Organizaci\u00f3n y Programaci\u00f3n del Trabajo", "shape": "dot", "title": "OYP-502"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "GRH-502", "label": "Gesti\u00f3n de Relaciones Humanas", "shape": "dot", "title": "GRH-502"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TYD-502", "label": "Teor\u00edas y T\u00e9cnicas de Decisi\u00f3n", "shape": "dot", "title": "TYD-502"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ING-663", "label": "Ingl\u00e9s VI", "shape": "dot", "title": "ING-663"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SOP-623", "label": "Sistemas Operativos II", "shape": "dot", "title": "SOP-623"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ISF-614", "label": "Ingenier\u00eda del Software I", "shape": "dot", "title": "ISF-614"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CAL-604", "label": "C\u00e1lculo Num\u00e9rico", "shape": "dot", "title": "CAL-604"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "PRO-633", "label": "Programaci\u00f3n III", "shape": "dot", "title": "PRO-633"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "MEI-612", "label": "Metodolog\u00eda de la Investigaci\u00f3n I", "shape": "dot", "title": "MEI-612"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ARD-603", "label": "An\u00e1lisis y Reconocimiento de Delitos Inform\u00e1ticos", "shape": "dot", "title": "ARD-603"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ING-773", "label": "Ingl\u00e9s VII", "shape": "dot", "title": "ING-773"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "IOP-703", "label": "Investigaci\u00f3n de Operaciones", "shape": "dot", "title": "IOP-703"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ISF-724", "label": "Ingenier\u00eda de Software II", "shape": "dot", "title": "ISF-724"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SDS-703", "label": "Sistemas de Se\u00f1ales", "shape": "dot", "title": "SDS-703"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "PRW-703", "label": "Programaci\u00f3n Web", "shape": "dot", "title": "PRW-703"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "MEI-722", "label": "Metodolog\u00eda de la Investigaci\u00f3n II", "shape": "dot", "title": "MEI-722"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SIN-703", "label": "Seguridad Inform\u00e1tica", "shape": "dot", "title": "SIN-703"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ARH-702", "label": "Administraci\u00f3n de Recursos Humanos", "shape": "dot", "title": "ARH-702"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TGR-702", "label": "T\u00e9cnicas Gerenciales", "shape": "dot", "title": "TGR-702"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SAU-702", "label": "Sistemas Automatizados", "shape": "dot", "title": "SAU-702"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "IEN-803", "label": "Ingenier\u00eda Econ\u00f3mica", "shape": "dot", "title": "IEN-803"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "FDD-802", "label": "Fundamentos del derecho", "shape": "dot", "title": "FDD-802"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TRD-814", "label": "Transmisi\u00f3n de Datos I", "shape": "dot", "title": "TRD-814"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CTB-803", "label": "Contabilidad General", "shape": "dot", "title": "CTB-803"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "PRE-803", "label": "Programaci\u00f3n Emergente", "shape": "dot", "title": "PRE-803"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "FEP-803", "label": "Formulaci\u00f3n y Evaluaci\u00f3n de Proyectos de Ingenier\u00eda", "shape": "dot", "title": "FEP-803"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CRP-803", "label": "Criptograf\u00eda", "shape": "dot", "title": "CRP-803"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "SAM-802", "label": "Seguridad Ambiental y Medio Ambiente", "shape": "dot", "title": "SAM-802"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "PRD-802", "label": "Producci\u00f3n", "shape": "dot", "title": "PRD-802"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "MAD-802", "label": "Modelos Administrativos", "shape": "dot", "title": "MAD-802"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "AUS-904", "label": "Auditoria de Sistemas", "shape": "dot", "title": "AUS-904"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "ETP-902", "label": "\u00c9tica Profesional", "shape": "dot", "title": "ETP-902"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TEL-903", "label": "Transacciones Electr\u00f3nicas", "shape": "dot", "title": "TEL-903"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TRD-924", "label": "Transmisi\u00f3n de Datos II", "shape": "dot", "title": "TRD-924"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "PRO-903", "label": "Programaci\u00f3n Multimedia", "shape": "dot", "title": "PRO-903"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "STG-903", "label": "Seminario de Trabajo de Grado", "shape": "dot", "title": "STG-903"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "AFO-903", "label": "An\u00e1lisis Forense", "shape": "dot", "title": "AFO-903"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "RPV-902", "label": "VPN Redes Privadas Virtuales", "shape": "dot", "title": "RPV-902"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "DCM-902", "label": "Dise\u00f1o y Control de Modelos", "shape": "dot", "title": "DCM-902"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "CEP-902", "label": "Control Estad\u00edstico de Procesos", "shape": "dot", "title": "CEP-902"}, {"color": "#97c2fc", "font": {"color": "black"}, "id": "TLP-902", "label": "Teor\u00eda de Lenguajes de Programaci\u00f3n", "shape": "dot", "title": "TLP-902"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "30 UC APROB", "label": "30 UC APROB", "shape": "dot", "title": "30 UC APROB"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "P-LAF-422", "label": "P-LAF-422", "shape": "dot", "title": "P-LAF-422"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "SEM I-IV", "label": "SEM I-IV", "shape": "dot", "title": "SEM I-IV"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "50% UC APROBADAS", "label": "50% UC APROBADAS", "shape": "dot", "title": "50% UC APROBADAS"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "80UC", "label": "80UC", "shape": "dot", "title": "80UC"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "70 UC APROBADAS", "label": "70 UC APROBADAS", "shape": "dot", "title": "70 UC APROBADAS"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "90UC APROBADAS", "label": "90UC APROBADAS", "shape": "dot", "title": "90UC APROBADAS"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "100 UC APROBADAS", "label": "100 UC APROBADAS", "shape": "dot", "title": "100 UC APROBADAS"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "100 UC APROB", "label": "100 UC APROB", "shape": "dot", "title": "100 UC APROB"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "120UC", "label": "120UC", "shape": "dot", "title": "120UC"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "100 UC", "label": "100 UC", "shape": "dot", "title": "100 UC"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "ISF-724-MEI-722", "label": "ISF-724-MEI-722", "shape": "dot", "title": "ISF-724-MEI-722"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "130 UC APROB", "label": "130 UC APROB", "shape": "dot", "title": "130 UC APROB"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "153 UC APROB", "label": "153 UC APROB", "shape": "dot", "title": "153 UC APROB"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "RIB-813", "label": "RIB-813", "shape": "dot", "title": "RIB-813"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "ABD-813", "label": "ABD-813", "shape": "dot", "title": "ABD-813"}, {"color": "#FFA500", "font": {"color": "black"}, "id": "158 UC APROB", "label": "158 UC APROB", "shape": "dot", "title": "158 UC APROB"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#00FF00", "dashes": true, "from": "LEN-113", "title": "OR", "to": "LEN-223"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ING-113", "title": "OR", "to": "ING-223"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CAL-114", "title": "OR", "to": "ALG-203"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CAL-114", "title": "OR", "to": "CAL-224"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CAL-114", "title": "OR", "to": "FIS-214"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "INF-102", "title": "OR", "to": "OAE-202"}, {"arrows": "to", "color": "#00FF00", "from": "INF-102", "title": "AND", "to": "EDD-203"}, {"arrows": "to", "color": "#00FF00", "from": "LOG-103", "title": "AND", "to": "EDD-203"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ING-223", "title": "OR", "to": "ING-333"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "FIS-214", "title": "OR", "to": "LAF-312"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CAL-224", "title": "OR", "to": "CAL-334"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "FIS-214", "title": "OR", "to": "FIS-324"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ALG-203", "title": "OR", "to": "MAT-302"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "EDD-203", "title": "OR", "to": "BDD-304"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "30 UC APROB", "title": "OR", "to": "TEC-303"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ING-333", "title": "OR", "to": "ING-443"}, {"arrows": "to", "color": "#00FF00", "from": "LAF-312", "title": "AND", "to": "LAF-422"}, {"arrows": "to", "color": "#00FF00", "from": "FIS-324", "title": "AND", "to": "LAF-422"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CAL-334", "title": "OR", "to": "CAL-444"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "BDD-304", "title": "OR", "to": "FDR-403"}, {"arrows": "to", "color": "#00FF00", "from": "LOG-103", "title": "AND", "to": "TDG-414"}, {"arrows": "to", "color": "#00FF00", "from": "P-LAF-422", "title": "AND", "to": "TDG-414"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "EDD-203", "title": "OR", "to": "PRO-413"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "EDD-203", "title": "OR", "to": "ADC-403"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ING-443", "title": "OR", "to": "ING-553"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "BDD-304", "title": "OR", "to": "LAD-502"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "SEM I-IV", "title": "OR", "to": "SSC-502"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "50% UC APROBADAS", "title": "OR", "to": "SSC-502"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CAL-334", "title": "OR", "to": "EYP-503"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "TDG-414", "title": "OR", "to": "TDG-524"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "PRO-413", "title": "OR", "to": "PRO-523"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ADC-403", "title": "OR", "to": "SOP-513"}, {"arrows": "to", "color": "#00FF00", "from": "BDD-304", "title": "AND", "to": "SSI-502"}, {"arrows": "to", "color": "#00FF00", "from": "80UC", "title": "AND", "to": "SSI-502"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "70 UC APROBADAS", "title": "OR", "to": "OYP-502"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ING-553", "title": "OR", "to": "ING-663"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "SOP-513", "title": "OR", "to": "SOP-623"}, {"arrows": "to", "color": "#00FF00", "from": "PRO-523", "title": "AND", "to": "ISF-614"}, {"arrows": "to", "color": "#00FF00", "from": "SOP-513", "title": "AND", "to": "ISF-614"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CAL-444", "title": "OR", "to": "CAL-604"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "PRO-523", "title": "OR", "to": "PRO-633"}, {"arrows": "to", "color": "#00FF00", "from": "TID-102", "title": "AND", "to": "MEI-612"}, {"arrows": "to", "color": "#00FF00", "from": "90UC APROBADAS", "title": "AND", "to": "MEI-612"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "SSI-502", "title": "OR", "to": "ARD-603"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ING-663", "title": "OR", "to": "ING-773"}, {"arrows": "to", "color": "#00FF00", "from": "ALG-203", "title": "AND", "to": "IOP-703"}, {"arrows": "to", "color": "#00FF00", "from": "EYP-503", "title": "AND", "to": "IOP-703"}, {"arrows": "to", "color": "#00FF00", "from": "100 UC APROBADAS", "title": "AND", "to": "IOP-703"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ISF-614", "title": "OR", "to": "ISF-724"}, {"arrows": "to", "color": "#00FF00", "from": "LAF-422", "title": "AND", "to": "SDS-703"}, {"arrows": "to", "color": "#00FF00", "from": "CAL-444", "title": "AND", "to": "SDS-703"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "PRO-633", "title": "OR", "to": "PRW-703"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "MEI-612", "title": "OR", "to": "MEI-722"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ARD-603", "title": "OR", "to": "SIN-703"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "OYP-502", "title": "OR", "to": "ARH-702"}, {"arrows": "to", "color": "#00FF00", "from": "GRH-502", "title": "AND", "to": "ARH-702"}, {"arrows": "to", "color": "#00FF00", "from": "100 UC APROB", "title": "AND", "to": "ARH-702"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "OYP-502", "title": "OR", "to": "TGR-702"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "TYD-502", "title": "OR", "to": "TGR-702"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ISF-614", "title": "OR", "to": "SAU-702"}, {"arrows": "to", "color": "#00FF00", "from": "TEC-303", "title": "AND", "to": "IEN-803"}, {"arrows": "to", "color": "#00FF00", "from": "120UC", "title": "AND", "to": "IEN-803"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "120UC", "title": "OR", "to": "FDD-802"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "SDS-703", "title": "OR", "to": "TRD-814"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "100 UC", "title": "OR", "to": "CTB-803"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "PRW-703", "title": "OR", "to": "PRE-803"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ISF-724-MEI-722", "title": "OR", "to": "FEP-803"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "SIN-703", "title": "OR", "to": "CRP-803"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ARH-702", "title": "OR", "to": "SAM-802"}, {"arrows": "to", "color": "#00FF00", "from": "EYP-503", "title": "AND", "to": "PRD-802"}, {"arrows": "to", "color": "#00FF00", "from": "IOP-703", "title": "AND", "to": "PRD-802"}, {"arrows": "to", "color": "#00FF00", "from": "130 UC APROB", "title": "AND", "to": "PRD-802"}, {"arrows": "to", "color": "#00FF00", "from": "OYP-502", "title": "AND", "to": "MAD-802"}, {"arrows": "to", "color": "#00FF00", "from": "ARH-702", "title": "AND", "to": "MAD-802"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ISF-724", "title": "OR", "to": "AUS-904"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "153 UC APROB", "title": "OR", "to": "ETP-902"}, {"arrows": "to", "color": "#00FF00", "from": "TRD-814", "title": "AND", "to": "TEL-903"}, {"arrows": "to", "color": "#00FF00", "from": "FDD-802", "title": "AND", "to": "TEL-903"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "TRD-814", "title": "OR", "to": "TRD-924"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "PRE-803", "title": "OR", "to": "PRO-903"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "FEP-803", "title": "OR", "to": "STG-903"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CRP-803", "title": "OR", "to": "AFO-903"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "RIB-813", "title": "OR", "to": "RPV-902"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "ABD-813", "title": "OR", "to": "RPV-902"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "CRP-803", "title": "OR", "to": "RPV-902"}, {"arrows": "to", "color": "#00FF00", "from": "EYP-503", "title": "AND", "to": "DCM-902"}, {"arrows": "to", "color": "#00FF00", "from": "IOP-703", "title": "AND", "to": "DCM-902"}, {"arrows": "to", "color": "#00FF00", "from": "EYP-503", "title": "AND", "to": "CEP-902"}, {"arrows": "to", "color": "#00FF00", "from": "IOP-703", "title": "AND", "to": "CEP-902"}, {"arrows": "to", "color": "#00FF00", "dashes": true, "from": "158 UC APROB", "title": "OR", "to": "TLP-902"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
