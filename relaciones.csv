@@ -20,23 +20,23 @@ Cálculo III,CAL-334,CAL-224,4.0
 Física II,FIS-324,FIS-214,4.0
 Matemática Discreta,MAT-302,ALG-203,2.0
 Base de Datos,BDD-304,EDD-203,4.0
-Teoría Económica,TEC-303,30 UC APROB,3.0
+Teoría Económica,TEC-303,30 UC,3.0
 Inglés IV,ING-443,ING-333,3.0
 Laboratorio de Física II,LAF-422,LAF-312&FIS-324,2.0
 Cálculo IV,CAL-444,CAL-334,4.0
 Fundamentos de Redes,FDR-403,BDD-304,3.0
-Tecnología Digital I,TDG-414,LOG-103&P-LAF-422,4.0
+Tecnología Digital I,TDG-414,LOG-103&LAF-422,4.0
 Programación I,PRO-413,EDD-203,3.0
 Arquitectura del Computador,ADC-403,EDD-203,3.0
 Inglés V,ING-553,ING-443,3.0
 Laboratorio de Datos,LAD-502,BDD-304,2.0
-Servicio Social Comunitario,SSC-502,SEM I-IV|50% UC APROBADAS,2.0
+Servicio Social Comunitario,SSC-502,SEM I-IV|50% UC,2.0
 Estadística y Probabilidad,EYP-503,CAL-334,3.0
 Tecnología Digital II,TDG-524,TDG-414,4.0
 Programación II,PRO-523,PRO-413,3.0
 Sistemas Operativos I,SOP-513,ADC-403,3.0
-Seminario de Redes y Telecomunicaciones,RYT-502,FDR-403&80UC,2.0
-Organización y Programación del Trabajo,OYP-502,70 UC APROBADAS,2.0
+Seminario de Redes y Telecomunicaciones,RYT-502,FDR-403&80 UC,2.0
+Organización y Programación del Trabajo,OYP-502,70 UC,2.0
 Gestión de Relaciones Humanas,GRH-502,,
 Teorías y Técnicas de Decisión,TYD-502,,
 Inglés VI,ING-663,ING-553,3.0
@@ -44,30 +44,30 @@ Sistemas Operativos II,SOP-623,SOP-513,3.0
 Ingeniería del Software I,ISF-614,PRO-523&SOP-513,4.0
 Cálculo Numérico,CAL-604,CAL-444,4.0
 Programación III,PRO-633,PRO-523,3.0
-Metodología de la Investigación I,MEI-612,TID-102&90UC APROBADAS,2.0
+Metodología de la Investigación I,MEI-612,TID-102&90 UC,2.0
 Redes Cableadas I,RCB-613,RYT-502,3.0
 Inglés VII,ING-773,ING-663,3.0
-Investigación de Operaciones,IOP-703,ALG-203&EYP-503&100 UC APROBADAS,3.0
+Investigación de Operaciones,IOP-703,ALG-203&EYP-503&100 UC,3.0
 Ingeniería de Software II,ISF-724,ISF-614,4.0
 Sistemas de Señales,SDS-703,LAF-422&CAL-444,3.0
 Programación Web,PRW-703,PRO-633,3.0
 Metodología de la Investigación II,MEI-722,MEI-612,2.0
 Redes Cableadas II,RCB-723,RCB-613,3.0
-Administración de Recursos Humanos,ARH-702,OYP-502|GRH-502&100 UC APROB,2.0
+Administración de Recursos Humanos,ARH-702,OYP-502|GRH-502&100 UC,2.0
 Técnicas Gerenciales,TGR-702,OYP-502|TYD-502,
 Sistemas Automatizados,SAU-702,ISF-614,
-Ingeniería Económica,IEN-803,TEC-303&120UC,3.0
-Fundamentos del derecho,FDD-802,120UC,2.0
+Ingeniería Económica,IEN-803,TEC-303&120 UC,3.0
+Fundamentos del derecho,FDD-802,120 UC,2.0
 Transmisión de Datos I,TRD-814,SDS-703,4.0
 Contabilidad General,CTB-803,100 UC,3.0
 Programación Emergente,PRE-803,PRW-703,3.0
-Formulación y Evaluación de Proyectos de Ingeniería,FEP-803,ISF-724-MEI-722,3.0
+Formulación y Evaluación de Proyectos de Ingeniería,FEP-803,ISF-724&MEI-722,3.0
 Redes Inalámbricas I,RIB-813,RCB-723,3.0
 Seguridad Ambiental y Medio Ambiente,SAM-802,ARH-702,2.0
-Producción,PRD-802,EYP-503&IOP-703&130 UC APROB,
+Producción,PRD-802,EYP-503&IOP-703&130 UC,
 Modelos Administrativos,MAD-802,OYP-502&ARH-702,
 Auditoria de Sistemas,AUS-904,ISF-724,4.0
-Ética Profesional,ETP-902,153 UC APROB,2.0
+Ética Profesional,ETP-902,153 UC,2.0
 Transacciones Electrónicas,TEL-903,TRD-814&FDD-802,3.0
 Transmisión de Datos II,TRD-924,TRD-814,4.0
 Programación Multimedia,PRO-903,PRE-803,3.0
@@ -76,18 +76,18 @@ Redes Inalámbricas II,RIB-923,RIB-813,3.0
 VPN Redes Privadas Virtuales,RPV-902,RIB-813|ABD-813|CRP-803,2.0
 Diseño y Control de Modelos,DCM-902,EYP-503&IOP-703,
 Control Estadístico de Procesos,CEP-902,EYP-503&IOP-703,
-Teoría de Lenguajes de Programación,TLP-902,158 UC APROB,
-Seminario de Gestión de Datos,GDT-502,BDD-304&80UC,2.0
-Tecnología Cliente/Servidor,TCS-603,GDT502,3.0
+Teoría de Lenguajes de Programación,TLP-902,158 UC,
+Seminario de Gestión de Datos,GDT-502,BDD-304&80 UC,2.0
+Tecnología Cliente/Servidor,TCS-603,GDT-502,3.0
 Seguridad de Datos,SGD-703,TCS-603,3.0
 Administración de Base de Datos I,ABD-813,SGD-703,3.0
 Administración de Base de Datos II,ABD-923,ABD-813,3.0
-Seminario de Seguridad Informática,SSI-502,BDD-304&80UC,2.0
+Seminario de Seguridad Informática,SSI-502,BDD-304&80 UC,2.0
 Análisis y Reconocimiento de Delitos Informáticos,ARD-603,SSI-502,3.0
 Seguridad Informática,SIN-703,ARD-603,3.0
 Criptografía,CRP-803,SIN-703,3.0
 Análisis Forense,AFO-903,CRP-803,3.0
-Seminario de Automatización de Procesos,SAP-502,TDG-414&80UC,2.0
+Seminario de Automatización de Procesos,SAP-502,TDG-414&80 UC,2.0
 Programación de Circuitos,PGC-603,SAP-502,3.0
 Electrónica,ELT-703,PGC-603,3.0
 Mecatrónica,MET-803,ELT-703,3.0

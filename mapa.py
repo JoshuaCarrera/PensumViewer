@@ -75,9 +75,9 @@ for _, row in relaciones.iterrows():
                 
                 # Agregar el edge entre el prereq y el código
                 if tipo_relacion == 'AND':
-                    net.add_edge(prereq, codigo, title="AND")  # Línea roja para AND
+                    net.add_edge(prereq, codigo, title="AND", dashes=True)  # Línea roja para AND
                 else:
-                    net.add_edge(prereq, codigo, title="OR", dashes=True)  # Línea verde punteada para OR
+                    net.add_edge(prereq, codigo, title="OR")  # Línea verde punteada para OR
 
 # Generar el grafo
 net.save_graph("index.html")
