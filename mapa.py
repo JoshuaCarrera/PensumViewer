@@ -12,7 +12,7 @@ df = pd.read_csv('doc.csv')
 df = df.dropna(subset=['Código'])
 
 # Filtrar filas donde la prelación no sea '---'
-relaciones = df[['Unidad Curricular', 'Código', 'Prelación']]
+relaciones = df[['Unidad Curricular', 'Código', 'Prelación', 'UC']]
 
 # Normalizar los valores en las columnas
 relaciones.loc[:, 'Prelación'] = relaciones['Prelación'].replace(r'\s*-\s*', "-", regex=True)
@@ -44,7 +44,12 @@ for codigo in relaciones['Código']:
     nombre_unidad = codigo_a_nombre[codigo]
     semestre = obtener_semestre(codigo)
     color = COLORS[semestre]  # Seleccionar el color según el semestre
-    net.add_node(codigo, nombre_unidad, title=codigo, color=color, shape="dot", level=semestre, value=semestre)
+    uc = relaciones.loc[relaciones['Código'] == codigo, 'UC'].values[0] # Obtener el valor de la columna UC en la misma fila que el "Código"
+    if pd.notna(uc):  # Verificar si el valor no es NaN
+        titulo = f"{codigo} UC:{int(uc)}"
+    else:
+        titulo = f"{codigo} UC:N/A" 
+    net.add_node(codigo, nombre_unidad, title=titulo, color=color, shape="dot", level=semestre, value=semestre)
 
 # Paso 2: Agregar nodos de prelaciones (requisitos generales) y edges
 for _, row in relaciones.iterrows():
