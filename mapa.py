@@ -3,17 +3,7 @@ import re
 from pyvis.network import Network
 
 # Paleta de colores para los semestres
-COLORS = [
-    "#6FE3E1", # 1er semestre
-    "#6BD2E2",
-    "#68C0E2",
-    "#64AFE3",
-    "#619DE3",
-    "#5D8CE4",
-    "#597AE4",
-    "#5669E5",
-    "#5257E5", # 9no semestre
-    ]
+COLORS = ["#6FE3E1","#63DEE5","#57DAE9","#4BD5EC","#3FD1F0","#32CCF4","#26C7F8","#1AC3FB","#0EBEFF"]
 
 # Leer el archivo CSV
 df = pd.read_csv('doc.csv')
@@ -39,7 +29,8 @@ relaciones.to_csv('relaciones.csv', index=False)
 
 # Crear una red de Pyvis
 net = Network(notebook=False, height="900px", width="100%", bgcolor="#FFFFFF", font_color="black", directed=True)
-net.show_buttons(filter_=['physics'])
+#net.show_buttons(filter_=['physics'])
+net.toggle_physics(True)
 
 # Función para extraer el semestre del código
 def obtener_semestre(codigo):
@@ -53,7 +44,7 @@ for codigo in relaciones['Código']:
     nombre_unidad = codigo_a_nombre[codigo]
     semestre = obtener_semestre(codigo)
     color = COLORS[semestre]  # Seleccionar el color según el semestre
-    net.add_node(codigo, nombre_unidad, title=codigo, color=color)
+    net.add_node(codigo, nombre_unidad, title=codigo, color=color, shape="dot", level=semestre, value=semestre)
 
 # Paso 2: Agregar nodos de prelaciones (requisitos generales) y edges
 for _, row in relaciones.iterrows():
@@ -76,7 +67,7 @@ for _, row in relaciones.iterrows():
                 for prereq in prereqs:
                     # Si el prereq no es un código de curso, se agrega como un nodo adicional
                     if prereq not in relaciones['Código'].values:
-                        net.add_node(prereq, prereq, title=prereq, color="#FFA500")  # Color naranja para requisitos generales
+                        net.add_node(prereq, prereq, title=prereq, color="#FFA500", shape="dot", value=2)  # Color naranja para requisitos generales
                     
                     # Agregar el edge entre el prereq y el código
                     if tipo_relacion == 'AND':
