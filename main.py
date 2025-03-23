@@ -18,4 +18,4 @@ for table in tables:
 combined_df = pd.concat(dataframes, ignore_index=True)
 
 # Guardar el DataFrame combinado en un único archivo CSV
-combined_df.to_csv('combined_doc.csv', index=False)
+combined_df.to_csv('doc.csv', index=False)
