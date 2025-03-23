@@ -8,7 +8,6 @@ I,LEN -113,Lenguaje y Comunicación I,2,2,0,4,3,---
 ,TID- 102,Técnicas de Investigación Documental,2,1,0,3,2,---
 ,DPT- 102,Deporte,1,2,0,3,2,---
 Totales Semestre I,,,14,14,3,31,21,
-Total Acumulado,,,14,14,3,31,21,
 II,LEN-223,Lenguaje y Comunicación II,2,2,0,4,3,LEN -113
 ,ING-223,Inglés II,2,0,3,5,3,ING- 113
 ,ALG-203,Algebra Lineal,2,2,0,4,3,CAL- 114
@@ -16,8 +15,6 @@ II,LEN-223,Lenguaje y Comunicación II,2,2,0,4,3,LEN -113
 ,FIS-214,Física I,2,4,0,6,4,CAL- 114
 ,OAE-202,Organización y Administración de Empresas,1,2,0,3,2,INF-102
 ,EDD-203,Estructura de Datos,2,0,2,4,3,INF-102 / LOG-103
-Totales Semestre II,,,13,14,5,32,22,
-Total Acumulado,,,27,28,8,63,43,
 III,ING-333,Inglés III,2,0,3,5,3,ING-223
 ,LAF-312,Laboratorio de Física I,0,0,4,4,2,FIS-214
 ,CAL-334,Cálculo III,2,4,0,6,4,CAL-224
@@ -25,8 +22,6 @@ III,ING-333,Inglés III,2,0,3,5,3,ING-223
 ,MAT-302,Matemática Discreta,1,2,0,3,2,ALG-203
 ,BDD-304,Base de Datos,3,2,0,5,4,EDD-203
 ,TEC-303,Teoría Económica,2,2,0,4,3,30 UC APROB
-Totales Semestre III,,,12,14,7,33,22,
-Total Acumulado,,,39,42,15,96,65,
 IV,ING-443,Inglés IV,2,0,3,5,3,ING-333
 ,LAF-422,Laboratorio de Física II,0,0,4,4,2,LAF-312 / FIS-324
 ,CAL-444,Cálculo IV,2,4,0,6,4,CAL-334
@@ -34,8 +29,6 @@ IV,ING-443,Inglés IV,2,0,3,5,3,ING-333
 ,TDG-414,Tecnología Digital I,3,0,3,6,4,LOG-103/P-LAF-422
 ,PRO-413,Programación I,2,1,1,4,3,EDD-203
 ,ADC-403,Arquitectura del Computador,2,0,2,4,3,EDD-203
-Totales Semestre IV,,,13,6,14,33,22,
-Total Acumulado,,,52,48,29,129,87,
 V,ING-553,Inglés V,2,0,3,5,3,ING-443
 ,LAD-502,Laboratorio de Datos,0,0,4,4,2,BDD-304
 ,SSC-502,Servicio Social Comunitario,1,2,0,3,2,SEM I-IV ó 50% UC APROBADAS
@@ -43,75 +36,60 @@ V,ING-553,Inglés V,2,0,3,5,3,ING-443
 ,TDG-524,Tecnología Digital II,3,0,3,6,4,TDG-414
 ,PRO-523,Programación II,2,0,2,4,3,PRO-413
 ,SOP-513,Sistemas Operativos I,2,0,2,4,3,ADC-403
-,,Electiva de Ia Mención,,,,,,
-,SSI-502,Seminario de Seguridad Informática,2,0,0,2,2,BDD-304 / 80UC
-,,Electivas Comunes,,,,,,
+,RYT-502,Seminario de Redes y Telecomunicaciones,2,0,0,2,2,FDR-403 / 80UC
 ,OYP-502,Organización y Programación del Trabajo,2,1,0,3,2,70 UC APROBADAS
 ,GRH-502,Gestión de Relaciones Humanas,,,,,,
 ,TYD-502,Teorías y Técnicas de Decisión,,,,,,
-Totales Semestre V,,,16,5,14,35,24,
-Total Acumulado,,,68,53,43,164,111,
 VI,ING-663,Inglés VI,2,0,3,5,3,ING-553
 ,SOP-623,Sistemas Operativos II,2,0,2,4,3,SOP-513
 ,ISF-614,Ingeniería del Software I,3,0,2,5,4,PRO-523 / SOP-513
 ,CAL-604,Cálculo Numérico,3,3,0,6,4,CAL-444
 ,PRO-633,Programación III,2,0,2,4,3,PRO-523
 ,MEI-612,Metodología de la Investigación I,1,2,0,3,2,TID-102 / 90UC APROBADAS
-,,Electiva de Ia Mención,,,,,,
-,ARD-603,Análisis y Reconocimiento de Delitos Informáticos,2,0,2,4,3,SSI-502
-,,Electivas Comunes,,,,,,
-"Reparación y Mantenimiento de Micros
-RMM-602
-Diseño Asistido por el Computador
-DAC-602",,,1,0,2,3,2,ADC-403 / TDG-524
-,,,,,,,,90UC APROBADAS
-Totales Semestre VI,,,16,5,13,34,24,
-Total Acumulado,,,84,58,56,198,135,
+,RCB-613,Redes Cableadas I,2,0,2,4,3,RYT-502
 VII,ING-773,Inglés VII,2,0,3,5,3,ING-663
 ,IOP-703,Investigación de Operaciones,2,2,0,4,3,ALG-203/EYP-503/100 UC APROBADAS
 ,ISF-724,Ingeniería de Software II,2,2,2,6,4,ISF-614
 ,SDS-703,Sistemas de Señales,2,0,2,4,3,LAF-422/CAL-444
 ,PRW-703,Programación Web,2,0,2,4,3,PRO-633
 ,MEI-722,Metodología de la Investigación II,1,2,0,3,2,MEI-612
-,,Electiva de Ia Mención,,,,,,
-,SIN-703,Seguridad Informática,2,0,2,4,3,ARD-603
-,,Electivas Comunes,,,,,,
+,RCB-723,Redes Cableadas II,2,0,2,4,3,RCB-613
 ,ARH-702,Administración de Recursos Humanos,1,2,0,3,2,OYP-502 o GRH-502 / 100 UC APROB
 ,TGR-702,Técnicas Gerenciales,,,,,,OYP-502 o TYD-502
 ,SAU-702,Sistemas Automatizados,,,,,,ISF-614
-Totales Semestre VII,,,14,8,11,33,23,
-Total Acumulado,,,98,66,67,231,158,
 VIII,IEN-803,Ingeniería Económica,2,2,0,4,3,TEC-303/120UC
 ,FDD-802,Fundamentos del derecho,2,0,0,2,2,120UC
 ,TRD-814,Transmisión de Datos I,2,2,2,6,4,SDS-703
 ,CTB-803,Contabilidad General,2,3,0,5,3,100 UC
 ,PRE-803,Programación Emergente,2,0,2,4,3,PRW-703
 ,FEP-803,Formulación y Evaluación de Proyectos de Ingeniería,2,2,0,4,3,ISF-724-MEI-722
-,,Electiva de la Mención,,,,,,
-,CRP-803,Criptografía,2,0,2,4,3,SIN-703
-,,Electivas Comunes,,,,,,
+,RIB-813,Redes Inalámbricas I,2,0,2,4,3,RCB-723
 ,SAM-802,Seguridad Ambiental y Medio Ambiente,2,1,0,3,2,ARH-702
 ,PRD-802,Producción,,,,,,EYP-503 /IOP-703 / 130 UC APROB
 ,MAD-802,Modelos Administrativos,,,,,,OYP-502 / ARH-702
-Totales Semestre VIII,,,16,10,6,32,23,
-Total Acumulado,,,114,76,73,263,181,
 IX,AUS-904,Auditoria de Sistemas,3,2,0,5,4,ISF-724
 ,ETP-902,Ética Profesional,2,0,0,2,2,153 UC APROB
 ,TEL-903,Transacciones Electrónicas,2,2,0,4,3,TRD-814/FDD-802
 ,TRD-924,Transmisión de Datos II,2,2,2,6,4,TRD-814
 ,PRO-903,Programación Multimedia,2,0,2,4,3,PRE-803
 ,STG-903,Seminario de Trabajo de Grado,2,2,0,4,3,FEP-803
-,,Electiva de la Mención,,,,,,
-,AFO-903,Análisis Forense,2,0,2,4,3,CRP-803
-,,Electivas Comunes,,,,,,
+,RIB-923,Redes Inalámbricas II,2,0,2,4,3,RIB-813
 ,RPV-902,VPN Redes Privadas Virtuales,2,1,0,3,2,RIB-813 ó ABD-813 ó CRP-803
 ,DCM-902,Diseño y Control de Modelos,,,,,,EYP-503 / IOP-703
 ,CEP-902,Control Estadístico de Procesos,,,,,,EYP-503 / IOP-703
 ,TLP-902,Teoría de Lenguajes de Programación,,,,,,158 UC APROB
-Totales Semestre IX,,,17,9,6,32,24,
-Total Acumulado,,,131,85,79,295,205,
-"PAP-10020
-Pasantías Profesionales
-X",,,0,40,0,0,20,205 UC APROBADAS
-Totales Semestre X,,,0,40,0,40,20,
-Total Acumulado,,,131,125,79,335,225,
+,GDT-502,Seminario de Gestión de Datos,2,0,0,2,2,BDD-304 / 80UC
+,TCS-603,Tecnología Cliente/Servidor,2,0,2,4,3,GDT502
+,SGD-703,Seguridad de Datos,2,0,2,4,3,TCS-603
+,ABD-813,Administración de Base de Datos I,2,0,2,4,3,SGD-703
+,ABD-923,Administración de Base de Datos II,2,0,2,4,3,ABD-813
+,SSI-502,Seminario de Seguridad Informática,2,0,0,2,2,BDD-304 / 80UC
+,ARD-603,Análisis y Reconocimiento de Delitos Informáticos,2,0,2,4,3,SSI-502
+,SIN-703,Seguridad Informática,2,0,2,4,3,ARD-603
+,CRP-803,Criptografía,2,0,2,4,3,SIN-703
+,AFO-903,Análisis Forense,2,0,2,4,3,CRP-803
+,SAP-502,Seminario de Automatización de Procesos,2,0,0,2,2,TDG-414 / 80UC
+,PGC-603,Programación de Circuitos,2,0,2,4,3,SAP-502
+,ELT-703,Electrónica,2,0,2,4,3,PGC-603
+,MET-803,Mecatrónica,2,0,2,4,3,ELT-703
+,CPI-903,Control de Procesos Industriales,2,0,2,4,3,MET-803
