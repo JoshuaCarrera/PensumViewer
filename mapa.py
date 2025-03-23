@@ -60,4 +60,4 @@ for _, row in relaciones.iterrows():
                         net.add_edge(prereq, codigo, color="#00FF00", title="OR", dashes=True)  # Línea verde punteada para OR
 
 # Generar el grafo
-net.show("prelaciones.html", notebook=False)
+net.show("index.html", notebook=False)
