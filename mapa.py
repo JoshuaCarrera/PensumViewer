@@ -4,16 +4,16 @@ from pyvis.network import Network
 
 # Paleta de colores para los semestres
 COLORS = [
-    "#add8e6",  # Azul claro (Semestre 1)
-    "#9ac9e1",  # Azul claro-medio
-    "#87badc",  # Azul medio-claro
-    "#74abd7",  # Azul medio
-    "#619cd2",  # Azul medio-oscuro
-    "#4e8dcd",  # Azul oscuro-medio
-    "#3b7ec8",  # Azul oscuro
-    "#286fc3",  # Azul más oscuro
-    "#1560be",  # Azul muy oscuro (Semestre 9)
-]
+    "#6FE3E1", # 1er semestre
+    "#6BD2E2",
+    "#68C0E2",
+    "#64AFE3",
+    "#619DE3",
+    "#5D8CE4",
+    "#597AE4",
+    "#5669E5",
+    "#5257E5", # 9no semestre
+    ]
 
 # Leer el archivo CSV
 df = pd.read_csv('doc.csv')
