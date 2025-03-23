@@ -24,6 +24,7 @@ relaciones.to_csv('relaciones.csv', index=False)
 
 # Crear una red de Pyvis
 net = Network(notebook=False, height="900px", width="100%", bgcolor="#FFFFFF", font_color="black", directed=True)
+net.show_buttons(filter_=['physics'])
 
 # Paso 1: Agregar todos los nodos (códigos de cursos)
 for codigo in relaciones['Código']:
@@ -55,9 +56,9 @@ for _, row in relaciones.iterrows():
                     
                     # Agregar el edge entre el prereq y el código
                     if tipo_relacion == 'AND':
-                        net.add_edge(prereq, codigo, color="#00FF00", title="AND")  # Línea roja para AND
+                        net.add_edge(prereq, codigo, title="AND")  # Línea roja para AND
                     else:
-                        net.add_edge(prereq, codigo, color="#00FF00", title="OR", dashes=True)  # Línea verde punteada para OR
+                        net.add_edge(prereq, codigo, title="OR", dashes=True)  # Línea verde punteada para OR
 
 # Generar el grafo
-net.show("index.html", notebook=False)
+net.save_graph("index.html")
