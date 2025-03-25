@@ -65,7 +65,7 @@ VIII,IEN-803,Ingeniería Económica,2,2,0,4,3,TEC-303/120 UC APROBADAS
 ,FEP-803,Formulación y Evaluación de Proyectos de Ingeniería,2,2,0,4,3,ISF-724/MEI-722
 ,RIB-813,Redes Inalámbricas I,2,0,2,4,3,RCB-723
 ,SAM-802,Seguridad Ambiental y Medio Ambiente,2,1,0,3,2,ARH-702
-,PRD-802,Producción,,,,,,EYP-503 /IOP-703 / 130 UC APROBADAS
+,PRD-802,Producción,,,,,,IOP-703 / 130 UC APROBADAS
 ,MAD-802,Modelos Administrativos,,,,,,OYP-502 / ARH-702
 IX,AUS-904,Auditoria de Sistemas,3,2,0,5,4,ISF-724
 ,ETP-902,Ética Profesional,2,0,0,2,2,153 UC APROBADAS
@@ -75,8 +75,8 @@ IX,AUS-904,Auditoria de Sistemas,3,2,0,5,4,ISF-724
 ,STG-903,Seminario de Trabajo de Grado,2,2,0,4,3,FEP-803
 ,RIB-923,Redes Inalámbricas II,2,0,2,4,3,RIB-813
 ,RPV-902,VPN Redes Privadas Virtuales,2,1,0,3,2,RIB-813 ó ABD-813 ó CRP-803
-,DCM-902,Diseño y Control de Modelos,,,,,,EYP-503 / IOP-703
-,CEP-902,Control Estadístico de Procesos,,,,,,EYP-503 / IOP-703
+,DCM-902,Diseño y Control de Modelos,,,,,,IOP-703
+,CEP-902,Control Estadístico de Procesos,,,,,,IOP-703
 ,TLP-902,Teoría de Lenguajes de Programación,,,,,,158 UC APROBADAS
 ,GDT-502,Seminario de Gestión de Datos,2,0,0,2,2,BDD-304 / 80 UC APROBADAS
 ,TCS-603,Tecnología Cliente/Servidor,2,0,2,4,3,GDT-502
